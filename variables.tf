@@ -68,7 +68,7 @@ data "aws_subnet_ids" "my-subnets" {
   subnet_id = data.aws_subnet_ids.my-subnets.ids
   filter = {
     name = "Auto-assign public IPv4 address"
-    values = ["Yes"
+    values = ["Yes"]
    
   }
 }
