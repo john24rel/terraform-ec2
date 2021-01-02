@@ -65,9 +65,9 @@ data "aws_vpcs" "my-vpc" {
   }
 }
 data "aws_subnet_ids" "my-subnets" {
-  filters {
-  vpc_id = tolist(data.aws_vpcs.my-vpc.ids)
-  name = "Auto-assign public IPv4 address"
-  values = ["No"]
+  filter {
+    vpc_id = tolist(data.aws_vpcs.my-vpc.ids)[0]
+    name = "Auto-assign public IPv4 address"
+    values = ["No"]
   }
 }
