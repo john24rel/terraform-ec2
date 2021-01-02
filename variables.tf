@@ -65,5 +65,7 @@ data "aws_vpcs" "my-vpc" {
   }
 }
 data "aws_subnet_ids" "my-subnets" {
-  vpc_id = tolist(data.aws_vpcs.my-vpc.ids)[0]
+  vpc_id = tolist(data.aws_vpcs.my-vpc.ids)
+  for_each = data.aws_vpcs_ids.my-vpc.ids
+  id       = each.value
 }
