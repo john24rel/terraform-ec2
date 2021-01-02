@@ -64,10 +64,6 @@ data "aws_vpcs" "my-vpc" {
     environment = var.environment
   }
 }
-
 data "aws_subnet_ids" "my-subnets" {
   vpc_id = tolist(data.aws_vpcs.my-vpc.ids)[0]
-  tags {
-      Tier = "Private"
-    }
- }
+}
