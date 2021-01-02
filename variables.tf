@@ -69,5 +69,4 @@ data "aws_subnet_ids" "my-subnets" {
   vpc_id = tolist(data.aws_vpcs.my-vpc.ids)[0]
   count = "${length(data.aws_subnet_ids.all.ids)}"
   id    = "${data.aws_subnet_ids.all.ids[count.index]}"
-     }
-}
+ }
