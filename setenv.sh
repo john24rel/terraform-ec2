@@ -72,4 +72,6 @@ terraform {
 }
 EOF
 cat backend.tf
+export TF_VAR_alist= [${S3BUCKET},${S3BUCKETPROJ},${S3BUCKETREGION},${S3BUCKETTYPE},${ENVIRONMENT},${S3TFSTATEFILE}]
+
 
