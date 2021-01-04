@@ -72,6 +72,6 @@ terraform {
 }
 EOF
 cat backend.tf
-export TF_VAR_alist= "[s3_folder_project=${S3BUCKETPROJ},s3_folder_region=${S3BUCKETREGION},s3_folder_type=${S3BUCKETTYPE}]"
+export TF_VAR_amap= "[s3_folder_project=${S3BUCKETPROJ},s3_folder_region=${S3BUCKETREGION},s3_folder_type=${S3BUCKETTYPE}]"
 
 
