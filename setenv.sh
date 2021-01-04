@@ -71,7 +71,19 @@ terraform {
     }
 }
 EOF
+cat << EOF > "$DIR/Tf.vars.tf"
+variable "varrrs" {
+  type = "map"
+
+  default = {
+    s3_folder_project = "${S3BUCKETPROJ}"
+    s3_folder_region = "${S3BUCKETREGION}"
+    s3_folder_type = "${S3BUCKETTYPE}"
+    us-west-2 = "image-4567"
+  }
+}
+EOF
 cat backend.tf
-export TF_VAR_amap= { s3_folder_project = ${S3BUCKETPROJ} , s3_folder_region = ${S3BUCKETREGION} , s3_folder_type = ${S3BUCKETTYPE} }
+terraform fmt
 
 
